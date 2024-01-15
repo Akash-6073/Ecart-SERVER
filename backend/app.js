@@ -15,8 +15,8 @@ const app = express();
 
 app.use(cors(
     {
-        origin:["https://ecart-smoky.vercel.app/"],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+        origin:["https://ecart-qyvj8cjf1-akashs-projects-c2f9b723.vercel.app/"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
         credentials:true
     }
 ))
