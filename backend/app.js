@@ -4,6 +4,7 @@ const errorMiddleware = require('./middleware/error')
 const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 // const path = require("path")
+const cors = require('cors')
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
@@ -11,6 +12,15 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 }
 
 const app = express();
+
+app.use(cors(
+    {
+        origin:["https://ecart-smoky.vercel.app/"],
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+        credentials:true
+    }
+))
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended:true,parameterLimit:1000000,limit:"500mb"}))
